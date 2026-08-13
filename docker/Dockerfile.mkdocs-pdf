@@ -1,0 +1,13 @@
+FROM squidfunk/mkdocs-material
+
+# Optional: dependencies for better PDF rendering (WeasyPrint backend)
+RUN apk add --no-cache \
+    build-base \
+    cairo-dev pango-dev gdk-pixbuf-dev \
+    libffi-dev zlib-dev jpeg-dev musl-dev freetype-dev \
+    harfbuzz-dev fribidi-dev
+
+# Install mkdocs-to-pdf plugin
+RUN pip install mkdocs-to-pdf
+
+WORKDIR /docs

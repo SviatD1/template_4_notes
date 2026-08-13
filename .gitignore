@@ -1,0 +1,7 @@
+*.code-workspace
+.obsidian/
+.cache/
+.trash/
+sources/
+site/
+site_zensical/

@@ -1,0 +1,15 @@
+site_name: "MyProject"
+site_description: "Docs for MyProject"
+site_url: ""
+
+theme:
+  name: material
+
+nav:
+  - Overview: index.md
+
+plugins:
+  - search
+  - to-pdf:
+      enabled_if_env: ENABLE_PDF_EXPORT   # only build PDF when env var is set
+      output_path: pdf/documentation.pdf  # PDF will end up as site/pdf/documentation.pdf

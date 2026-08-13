@@ -1,0 +1,17 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /site
+
+# Install Zensical
+RUN pip install --no-cache-dir zensical
+
+EXPOSE 8000
+
+# Default entrypoint: run zensical
+ENTRYPOINT ["zensical"]
+
+# Default command: dev server, bound to all interfaces
+CMD ["serve", "-a", "0.0.0.0:8000"]
